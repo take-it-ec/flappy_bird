@@ -41,25 +41,27 @@ setInterval(function(){
     var holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
     var cTop= -(500-characterTop);
     if((characterTop>480)||((blockLeft<20)&&(blockLeft>-50)&&((cTop<holeTop)||(cTop>holeTop+130)))){
-        if(counter == 0){
+      
+        Music();
         alert("GameOver Ok Bei \nYour Score: "+(counter));
+        character.style.top = 100 +"px";
+        counter=0;
+
         window.location.href = 'flappy.html';
-        character.style.top = 100 +"px";
-        counter=0;
-
+       
+      
             
-        }
-       else{
+        
+      
 
-        alert("GameOver Ok Bei \nYour Score: "+(counter-1));
-        window.location.href = 'flappy.html'
-        character.style.top = 100 +"px";
-        counter=0;
-       } 
+     
 
     }
 },10);
-
+function Music() {
+    var audio = document.getElementById("audio");
+    audio.play();
+  }
 function jump(){
     jumping=1;
     let jumpCount=0;

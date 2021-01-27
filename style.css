@@ -64,6 +64,15 @@ body{
 
 }
 
+.btn{
+    padding:3px;
+    padding-right:5px;
+    padding-left:5px;
+    border-radius:5px;
+    border:none;
+    font-size:larger;
+}
+
 @media (max-width:720px){
 
     body{
