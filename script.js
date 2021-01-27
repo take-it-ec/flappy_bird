@@ -42,12 +42,17 @@ setInterval(function(){
     var cTop= -(500-characterTop);
     if((characterTop>480)||((blockLeft<20)&&(blockLeft>-50)&&((cTop<holeTop)||(cTop>holeTop+130)))){
         if(counter == 0){
-        // alert("GameOver Ok Bei \nYour Score: "+(counter));
+        alert("GameOver Ok Bei \nYour Score: "+(counter));
+        window.location.href = 'flappy.html';
+        character.style.top = 100 +"px";
+        counter=0;
+
             
         }
        else{
 
-        // alert("GameOver Ok Bei \nYour Score: "+(counter-1));
+        alert("GameOver Ok Bei \nYour Score: "+(counter-1));
+        window.location.href = 'flappy.html'
         character.style.top = 100 +"px";
         counter=0;
        } 
