@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" onclick="jump()">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>flappy bird</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCCWMKBK1R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-PCCWMKBK1R');
+    </script>
 </head>
+
 <body>
     <div id="game">
         <div id="block"></div>
@@ -14,29 +28,27 @@
     </div>
 
     <div class="score">
-        <h5>Score: <span class = 'scoreName'></span></h5>
-        <h3 class = 'wickedTalk'>Game Begins</h3>
+        <h5>Score: <span class='scoreName'></span></h5>
+        <h3 class='wickedTalk'>Game Begins</h3>
     </div>
 
 
     <div class="modal">
-        
-    <audio id = 'audio'>
+
+        <audio id='audio'>
         <source src = './sound.mp3' type = 'audio/mpeg'>
-    </audio> 
+    </audio>
         <div class="innerModal">
 
             <section class="modalContent">
-                <h3 class = 'wickedTalks'>
-                <img src="./gamerboybg.png" class = 'gamerboy'alt="">
-                     
-                    
-                    Ok Bie</h3>
-                <h2 class = 'scoreNames'>GAME OVER</h2>
-                <span class = 'modalSpan'><button onclick = "window.location.href = 'flappy.html'">Continue</button><button onclick = "window.location.href = 'flappybird.html'">Exit now</button></span>
+                <h3 class='wickedTalks'>
+                    <img src="./gamerboybg.png" class='gamerboy' alt=""> Ok Bie</h3>
+                <h2 class='scoreNames'>GAME OVER</h2>
+                <span class='modalSpan'><button onclick = "window.location.href = 'flappy.html'">Continue</button><button onclick = "window.location.href = 'flappybird.html'">Exit now</button></span>
             </section>
         </div>
     </div>
 </body>
 <script src="script.js"></script>
+
 </html>
