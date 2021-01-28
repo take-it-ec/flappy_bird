@@ -49,8 +49,8 @@ body {
 #character {
   width: 20px;
   height: 20px;
-  /* background-color:red; */
-  background: url("./gamer.jpeg");
+  background-color:red;
+  /* background: url("./gamer.jpeg"); */
   background-position: center;
   background-size: cover;
 
