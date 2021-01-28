@@ -42,12 +42,19 @@ setInterval(function(){
     var cTop= -(500-characterTop);
     if((characterTop>480)||((blockLeft<20)&&(blockLeft>-50)&&((cTop<holeTop)||(cTop>holeTop+130)))){
       
-        Music();
-        alert("GameOver Ok Bei \nYour Score: "+(counter));
+        // Music();
+        // alert("GameOver Ok Bei \nYour Score: "+(counter));
+        var modal = document.querySelector('.modal')
+        var game = document.querySelector('#game');
+        var score = document.querySelector('.score');
+        modal.style.display = 'block';
+        
+        game.style.display = 'none';
+        score.style.display = 'none';
         character.style.top = 100 +"px";
         counter=0;
 
-        window.location.href = 'flappy.html';
+        // window.location.href = 'flappy.html';
        
       
             
@@ -90,3 +97,6 @@ document.addEventListener('keydown', function(event)
 
 
 )
+
+// var modalButton = document.querySelector('.modalButton');
+// console.log(modalButton.data-toggle);

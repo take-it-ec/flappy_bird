@@ -16,12 +16,22 @@
     <div class="score">
         <h5>Score: <span class = 'scoreName'></span></h5>
         <h3 class = 'wickedTalk'>Game Begins</h3>
-        <button class = 'btn' onclick = `window.location.href = 'index.html'`>Exit</button>
     </div>
 
     <audio id = 'audio'>
-        <source src = './demosong.mp3' type = 'audio/mpeg'>
+        <source src = './sound.mp3' type = 'audio/mpeg'>
     </audio> 
+
+    <div class="modal">
+        <div class="innerModal">
+
+            <section class="modalContent">
+                <h3>Ok Bie</h3>
+                <h2>GAME OVER</h2>
+                <span class = 'modalSpan'><button onclick = "window.location.href = 'flappy.html'">Continue</button><button onclick = "window.location.href = 'index.html'">Exit now</button></span>
+            </section>
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>

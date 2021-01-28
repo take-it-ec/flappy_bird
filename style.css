@@ -76,6 +76,80 @@ body{
 .btn:focus{
     outline:none;
 }
+.modal{
+    height:300px;
+    width:450px;
+    background: #87ceeb;
+    box-shadow: inset 5px 5px 5px #6ca5bc,
+                inset -5px -5px 5px #a2f7ff;
+    position:absolute;
+    left:50%;
+    top:50%;
+    border-radius:15px;
+    /* box-shadow:7px 7px 18px 5px; */
+    display:none;
+ 
+    animation: animateModal 2s ease forwards;
+}
+
+@keyframes animateModal{
+    0%{
+       transform: translate(0, 0);
+    }
+    100%{
+    transform:translate(-50%, -50%);
+
+    }
+}
+
+
+.innerModal{
+    height:80%;
+    width:80%;
+    display:flex;
+    margin:0 auto;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    justify-content: center;
+}
+.modalContent h3{
+    
+    margin:0 auto;
+    margin-top:20px;
+    font-size:24px;
+    text-align:center;
+    margin-bottom:20px;
+}
+.modalContent h2{
+    font-size:40px;
+    text-align:center;
+}
+.modalSpan{
+    display:flex;
+    justify-content:space-around;
+}
+.modalSpan button{
+
+    border-radius: 5px;
+background: #87ceeb;
+box-shadow: inset 5px 5px 5px #6ca5bc,
+            inset -5px -5px 5px #a2f7ff;
+            padding:5px;
+            border:1px solid steelblue;
+            font-family: 'Potta One', cursive;
+            margin-top:40px;
+            font-size:15px;
+
+}
+.modalSpan button:active{
+    box-shadow:none;
+}
+.modalSpan button:focus{
+    outline:none;
+}
+
 @media (max-width:720px){
 
     body{
@@ -90,5 +164,34 @@ body{
         background-position:center;
         overflow:none;
 
+    }
+    .modal{
+        height:200px;
+        width:300px;
+        
+    }
+    .modalContent h2{
+
+        font-size:30px;
+    }
+    .modalContent h3{
+        margin-top:0;
+    }
+    .modalSpan{
+        display:flex;
+        justify-content: space-around;
+    }
+
+    .modalSpan button{
+
+        border-radius: 5px;
+    background: #87ceeb;
+    box-shadow: inset 5px 5px 5px #6ca5bc,
+                inset -5px -5px 5px #a2f7ff;
+                padding:5px;
+                border:1px solid steelblue;
+                font-family: 'Potta One', cursive;
+                margin-top:20px;
+    
     }
 }
