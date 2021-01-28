@@ -11,10 +11,12 @@ hole.addEventListener('animationiteration', () => {
     hole.style.top = random + "px" ;
     counter++;
     var score = document.querySelector('.scoreName');
+    var finalScore = document.querySelector('.scoreNames');
+    var finalTalk = document.querySelector('.wickedTalks');
     score.innerHTML = `${counter}`;
     var talk = document.querySelector('.wickedTalk');
     if(counter < 5){
-        talk.innerHTML = 'You Blind'
+        talk.innerHTML = 'blind noob'
     }
     else if(counter < 10){
         talk.innerHTML = 'nice try noob';
@@ -27,9 +29,13 @@ hole.addEventListener('animationiteration', () => {
     }
     else if(counter < 40){
         talk.innerHTML = 'silver Thunder';
-    }else if (counter > 40){
-        talk.innerHTML = 'destroyer';
+    }else if (counter < 60){
+        talk.innerHTML = 'destroyer gold';
+    }else if(counter > 80){
+        talk.innerHTML = 'diamond looter';
     }
+    finalScore.innerHTML = score.innerHTML;
+    finalTalk.innerHTML = talk.innerHTML
 
 });
 

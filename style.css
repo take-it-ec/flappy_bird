@@ -1,196 +1,213 @@
 @import url("https://fonts.googleapis.com/css2?family=Potta+One&display=swap");
 
-*{
-    padding:0;
-    margin:0;
-    background-color: skyblue;
-    box-sizing:border-box;
+* {
+  padding: 0;
+  margin: 0;
+  background-color: skyblue;
+  box-sizing: border-box;
 }
-body{
-    height:100vh;
-    display:flex;
-    font-family: "Potta One", cursive;
-    flex-direction:column;
+body {
+  height: 100vh;
+  display: flex;
+  font-family: "Potta One", cursive;
+  flex-direction: column;
+}
+#game {
+  position: relative;
+  width: 600px;
+  height: 500px;
+  border: 1px solid black;
+  margin: auto;
+  overflow: hidden;
+  background-image: url("flappy.jpg");
+}
+#block {
+  width: 50px;
+  height: 500px;
+  background-color: rgb(28, 61, 88);
+  position: relative;
+  left: 500px;
+  animation: block 1.6s infinite linear;
+}
+@keyframes block {
+  0% {
+    left: 500px;
+  }
+  100% {
+    left: -50px;
+  }
+}
+#hole {
+  width: 50px;
+  height: 150px;
+  background-color: rgb(135, 196, 224);
+  position: relative;
+  left: 400px;
+  top: -500px;
+  animation: block 1.6s infinite linear;
+}
+#character {
+  width: 20px;
+  height: 20px;
+  /* background-color:red; */
+  background: url("./gamer.jpeg");
+  background-position: center;
+  background-size: cover;
 
+  position: absolute;
+  top: 100px;
+  border-radius: 100%;
 }
-#game{
-    position:relative;
-    width:600px;
-    height:500px;
-    border:1px solid black;
-    margin:auto;
-    overflow: hidden;
-    background-image: url('flappy.jpg');
-}
-#block{
-    width:50px;
-    height:500px;
-    background-color:rgb(28, 61, 88);
-    position: relative;
-    left:500px;
-    animation:block 1.6s infinite linear; 
-}
-@keyframes block{
-    0%{left:500px;}
-    100%{left:-50px;}
-}
-#hole{
-    width:50px;
-    height:150px;
-    background-color:rgb(135, 196, 224) ;
-    position: relative;
-    left:400px;
-    top:-500px;
-    animation:block 1.6s infinite linear; 
-}
-#character{
-    width:20px;
-    height:20px;
-    background-color:red;
-    position:absolute;
-    top:100px;
-    border-radius:100%;
-}
-.btnPhone, .btnPhoneInner{
-    display:none;
+.btnPhone,
+.btnPhoneInner {
+  display: none;
 }
 
-.score{
-    width:100%;
-    padding:5px;
-    padding-top:15px;
-    padding-left:10px;
-    padding-bottom:15px;
-
+.score {
+  width: 100%;
+  padding: 5px;
+  padding-top: 15px;
+  padding-left: 10px;
+  padding-bottom: 15px;
 }
 
-.btn{
-    padding:3px;
-    padding-right:5px;
-    padding-left:5px;
-    border-radius:15px;
-    margin-top:15px;
-    border:none;
-    font-size:larger;
+.btn {
+  padding: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 15px;
+  margin-top: 15px;
+  border: none;
+  font-size: larger;
 }
-.btn:focus{
-    outline:none;
+.btn:focus {
+  outline: none;
 }
-.modal{
-    height:300px;
-    width:450px;
-    background: #87ceeb;
-    box-shadow: inset 5px 5px 5px #6ca5bc,
-                inset -5px -5px 5px #a2f7ff;
-    position:absolute;
-    left:50%;
-    top:50%;
-    border-radius:15px;
-    display:none;
+.modal {
+  height: 300px;
+  width: 450px;
+  background: #87ceeb;
+  box-shadow: inset 5px 5px 5px #6ca5bc, inset -5px -5px 5px #a2f7ff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 15px;
+  display: none;
+
+  animation: animateModal 1.5s ease forwards;
+}
+
+@keyframes animateModal {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.innerModal {
+  height: 80%;
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+}
+.modalContent h3 {
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.modalContent h2 {
+  font-size: 40px;
+  text-align: center;
+}
+.modalSpan {
+  display: flex;
+  justify-content: space-around;
+}
+.modalSpan button {
+  border-radius: 5px;
+  background: #87ceeb;
+  box-shadow: inset 5px 5px 5px #6ca5bc, inset -5px -5px 5px #a2f7ff;
+  padding: 5px;
+  border: 1px solid steelblue;
+  font-family: "Potta One", cursive;
+  margin-top: 40px;
+  font-size: 15px;
+  text-align:center;
+}
+.modalSpan button:active {
+  box-shadow: none;
+}
+.modalSpan button:focus {
+  outline: none;
+}
+.gamerboy {
+  border-radius: 30px;
+  top:-12px;
  
-    animation: animateModal 2s ease forwards;
+  left: 60px;
+  height: 100px;
+  width: 70px;
+  display: block;
+  position: absolute;
 }
+.gamerboy:hover{
+    transform:scale(2);
+}
+@media (max-width: 720px) {
+  body {
+    display: block;
+  }
 
-@keyframes animateModal{
-    0%{
-       transform: translate(0, 0);
-    }
-    100%{
-    transform:translate(-50%, -50%);
+  #game {
+    height: 500px;
+    width: 100vw;
+    background: url("flappy.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: none;
+  }
+  .modal {
+    height: 200px;
+    width: 300px;
+  }
+  .modalContent h2 {
+    font-size: 30px;
+  }
+  .modalContent h3 {
+    margin-top: 0;
+  }
+  .modalSpan {
+    display: flex;
+    justify-content: space-around;
+  }
 
-    }
-}
-
-
-.innerModal{
-    height:80%;
-    width:80%;
-    display:flex;
-    margin:0 auto;
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%, -50%);
-    justify-content: center;
-}
-.modalContent h3{
-    
-    margin:0 auto;
-    margin-top:20px;
-    font-size:24px;
-    text-align:center;
-    margin-bottom:20px;
-}
-.modalContent h2{
-    font-size:40px;
-    text-align:center;
-}
-.modalSpan{
-    display:flex;
-    justify-content:space-around;
-}
-.modalSpan button{
-
+  .modalSpan button {
     border-radius: 5px;
-background: #87ceeb;
-box-shadow: inset 5px 5px 5px #6ca5bc,
-            inset -5px -5px 5px #a2f7ff;
-            padding:5px;
-            border:1px solid steelblue;
-            font-family: 'Potta One', cursive;
-            margin-top:40px;
-            font-size:15px;
-
-}
-.modalSpan button:active{
-    box-shadow:none;
-}
-.modalSpan button:focus{
-    outline:none;
-}
-
-@media (max-width:720px){
-
-    body{
-        display:block;
-    }
-
-    #game{
-        height:500px;
-        width:100vw;
-        background:url('flappy.jpg');
-        background-size:cover;
-        background-position:center;
-        overflow:none;
-
-    }
-    .modal{
-        height:200px;
-        width:300px;
-        
-    }
-    .modalContent h2{
-
-        font-size:30px;
-    }
-    .modalContent h3{
-        margin-top:0;
-    }
-    .modalSpan{
-        display:flex;
-        justify-content: space-around;
-    }
-
-    .modalSpan button{
-
-        border-radius: 5px;
     background: #87ceeb;
-    box-shadow: inset 5px 5px 5px #6ca5bc,
-                inset -5px -5px 5px #a2f7ff;
-                padding:5px;
-                border:1px solid steelblue;
-                font-family: 'Potta One', cursive;
-                margin-top:20px;
-    
-    }
+    box-shadow: inset 5px 5px 5px #6ca5bc, inset -5px -5px 5px #a2f7ff;
+    padding: 5px;
+    border: 1px solid steelblue;
+    font-family: "Potta One", cursive;
+    margin-top: 20px;
+  }
+
+  .gamerboy {
+    border-radius: 30px;
+    top:12px;
+   
+    left: 40px;
+    height: 52px;
+    width: 35px;
+    display: block;
+    position: absolute;
+  }
 }
