@@ -3,6 +3,8 @@ var hole=document.getElementById("hole");
 var character=document.getElementById("character");
 var jumping=0;
 var counter = 0;
+var num = 2;
+var demo = 2
 
 hole.addEventListener('animationiteration', () => {
     var random = -((Math.random()*300)+150);
@@ -31,6 +33,7 @@ hole.addEventListener('animationiteration', () => {
 
 });
 
+
 setInterval(function(){
     
     var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
@@ -40,21 +43,26 @@ setInterval(function(){
     var blockLeft=parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     var holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
     var cTop= -(500-characterTop);
+
     if((characterTop>480)||((blockLeft<20)&&(blockLeft>-50)&&((cTop<holeTop)||(cTop>holeTop+130)))){
-      
-        // Music();
         // alert("GameOver Ok Bei \nYour Score: "+(counter));
+        if(num == demo){
+            Music();
+            console.log('printing');
+            demo++;
+        }
+        
+
         var modal = document.querySelector('.modal')
         var game = document.querySelector('#game');
         var score = document.querySelector('.score');
         modal.style.display = 'block';
-        
         game.style.display = 'none';
         score.style.display = 'none';
         character.style.top = 100 +"px";
         counter=0;
 
-        // window.location.href = 'flappy.html';
+
        
       
             
@@ -68,6 +76,8 @@ setInterval(function(){
 function Music() {
     var audio = document.getElementById("audio");
     audio.play();
+    console.log('playing')
+    // setTimeout(function(){audio.pause()}, 3000);
   }
 function jump(){
     jumping=1;
